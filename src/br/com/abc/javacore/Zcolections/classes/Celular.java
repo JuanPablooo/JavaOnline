@@ -19,8 +19,20 @@ public class Celular {
     tabem e true
     consistente: x.equals(y) deve sempre retornar o mesmo valor (metodo pura > responsabilidade unica)
     se : x != null entao x.equals(null) tem que retornar igual a false
+    HASCODE
+         o hascode e um metodo que utiliza a tabela has de alto desempenho
+         pesquisar imagens(complicado de escrever)
+     devemos o usar o mesmo atributo do metodo equals no metodo hascode pois
+     se x.equals(y) == true; logo y.hasCode() == x.hasCode() == true ;
+     ter o hascode igual nao se]iguinifica que sao iguals perante ao metodo equals
+     por que um nome diferente pode ter o mesmo hasCode (olhar imagem tabela has)
      */
 
+
+    @Override
+    public int hashCode() {
+        return IMEI != null ? IMEI.hashCode() : 1;
+    }
 
     @Override
     public boolean equals(Object obj){
@@ -31,6 +43,7 @@ public class Celular {
          Celular outroCelular = (Celular) obj; // se chegar aqui e pq e um celular, entao vamos jogar em uma variavel
         return IMEI != null && IMEI.equals(outroCelular.getIMEI());
     }
+
 
 
 
