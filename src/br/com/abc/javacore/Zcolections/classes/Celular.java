@@ -12,6 +12,7 @@ public class Celular {
         this.nome = nome;
         this.IMEI = IMEI;
     }
+
     /*
     reflexivo : x.equals(x) tem que ser true para tudo que nao for null
     simetrico : para x e y diferente de null, se x.equals(y) == true logo y.equals(x) tem que ser true
@@ -45,7 +46,13 @@ public class Celular {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "Celular{" +
+                "nome='" + nome + '\'' +
+                ", IMEI='" + IMEI + '\'' +
+                '}';
+    }
 
     public String getNome() {
         return nome;
