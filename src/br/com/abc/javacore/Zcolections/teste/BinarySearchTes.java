@@ -29,6 +29,9 @@ public class BinarySearchTes {
         produtos.add(produto4);
         Collections.sort(produtos, new ProdutoNomeComparator());
         produtos.forEach(System.out::println);
+        Produto produto5 = new Produto("000", "Antena", 50);
+        System.out.println( Collections.binarySearch(produtos, produto5, new ProdutoNomeComparator()));
+
 
     }
 }
